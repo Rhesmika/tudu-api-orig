@@ -36,7 +36,7 @@ SECRET_KEY = 'django-insecure-pfk$795zqnjr=!p-kc=91lni!faa2+_-7(2wkvvytc*g+7p2z9
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+CSRF_TRUSTED_ORIGINS = ['https://8000-rhesmika-tuduapi-o468cral9f5.ws-eu85.gitpod.io']
 
 # Application definition
 
@@ -46,10 +46,10 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
+    'profiles',
 ]
 
 MIDDLEWARE = [
