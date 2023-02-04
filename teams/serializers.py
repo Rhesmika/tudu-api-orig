@@ -1,9 +1,9 @@
 from rest_framework import serializers
-from .models import Profile
+from .models import Team
 
 
-class ProfileSerializer(serializers.ModelSerializer):
-    owner = serializers.ReadOnlyField(source='owner.username')
+class TeamSerializer(serializers.ModelSerializer):
+    owner = serializers.ReadOnlyField(source='user.username')
     is_owner = serializers.SerializerMethodField()
 
     def get_is_owner(self, obj):
@@ -12,7 +12,7 @@ class ProfileSerializer(serializers.ModelSerializer):
 
 
     class Meta:
-        model = Profile 
+        model = Team 
         fields = [
             'id', 'owner', 'created_at', 'name', 'image', 'is_owner'
         ]
